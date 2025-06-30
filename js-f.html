@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>JavaScript Homework</title>
+
+</head>
+
+<body>
+
+    <h1>JavaScript Homework</h1>
+
+    <script>
+        // Düzbucaqlının sahəsini hesablayan funksiya
+        const calcRectangleArea = (a, b) => {
+            return a * b;
+        };
+
+        console.log(calcRectangleArea(3, 5)); // 12
+        console.log(calcRectangleArea(10, 7)); // 70
+
+
+        // Qiymət endirimi hesablayan funksiya
+        function calculateDiscount(price, discountPercent) {
+            if (price < 0 || discountPercent < 0 || discountPercent > 100) {
+                return "Xata: qiymət və ya endirim faizi düzgün deyil";
+            }
+            return +(price * (1 - discountPercent / 100)).toFixed(2);
+        }
+
+        console.log(calculateDiscount(100, 20));   // 80
+        console.log(calculateDiscount(59.9, 15));  // 50.92
+        console.log(calculateDiscount(200, 0));    // 200
+        console.log(calculateDiscount(150, 110));  // Xata mesajı
+        console.log(calculateDiscount(-10, 10));   // Xata mesajı
+
+        // Array daxilindəki ədədlərin ortalamasını hesablayan funksiya
+        function findAverage(array) {
+            if (!array.length) return 0;
+            const sum = array.reduce((acc, val) => acc + val, 0);
+            return `Average: ${sum / array.length}`;
+        }
+
+        console.log(findAverage([1, 2, 3])); // Average: 2
+        console.log(findAverage([15, 25, 10, 30])); // Average: 20
+
+        // Ədədin bölənlərinin sayını tapan funksiya
+        const divisorCountSimple = (number) => {
+            if (number < 1) return 0;
+            let count = 0;
+            for (let i = 1; i <= number; i++) {
+                if (number % i === 0) count++;
+            }
+            return count;
+        }
+
+        console.log(divisorCountSimple(1));   // 1
+        console.log(divisorCountSimple(6));   // 4
+        console.log(divisorCountSimple(12));  // 6
+        console.log(divisorCountSimple(25));  // 3
+        console.log(divisorCountSimple(100)); // 9
+
+        // Bal əsasında qiymət təyin edən funksiya
+        function getGradeByScore(score) {
+            if (score >= 80 && score <= 100) return "A";
+            if (score >= 70 && score <= 79) return "B";
+            if (score >= 60 && score <= 69) return "C";
+            if (score >= 50 && score <= 59) return "D";
+            if (score >= 0 && score <= 49) return "F";
+            return "Xəta: bal düzgün aralıqda deyil";
+        }
+
+        console.log(getGradeByScore(85)); // A
+        console.log(getGradeByScore(68)); // C
+        console.log(getGradeByScore(40)); // F
+
+
+        // String-i tərsinə çevirən funksiya
+        const reverseString = (str) => {
+            return str.split("").reverse().join("");
+        }
+
+        console.log(reverseString("code"));  // "edoc"
+        console.log(reverseString("hello")); // "olleh"
+
+        // Start-dan end-ə qədər ədədlərin cəmini qaytaran funksiya
+        function sumRange(start, end) {
+            if (start > end) return 0;
+            let sum = 0;
+            for (let i = start; i <= end; i++) {
+                sum += i;
+            }
+            return sum;
+        }
+
+        console.log(sumRange(1, 4)); // 10
+        console.log(sumRange(4, 6)); // 15
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>
